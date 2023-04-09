@@ -11169,7 +11169,7 @@
  }
 
  .tg__animate-text.style2 span {
-     animation: 0.8s both tg_animated_text2;
+     animation: 0.3s both tg_animated_text2;
  }
 
  @keyframes tg_animated_text2 {
