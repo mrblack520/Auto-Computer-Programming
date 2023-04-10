@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-     <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
@@ -29,11 +29,11 @@
 
     <!-- header-area -->
     <header>
-        <div id="sticky-header" class="tg-header__area transparent-header">
+        <div id="sticky-header" class="tg-header__area  transparent-header">
             <div class="container custom-container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="mobile-nav-toggler"><i class="fa fa-bar"></i></div>
+                        <div class="mobile-nav-toggler"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
@@ -44,15 +44,15 @@
                                         <li class="active menu-item-has-children"><a href="#">Home</a>
                                            
                                         </li>
-                                        <li><a href="#">ABOUT US</a></li>
-                                        <li ><a href="#">contact</a>
+                                        <li><a href="#about">ABOUT US</a></li>
+                                        <li ><a href="#contact">contact</a>
                                            
                                         </li>
                                         
-                                        <li ><a href="#">News</a>
+                                        <li ><a href="#news">News</a>
                                            
                                         </li>
-                                        <li><a href="#">Group Members</a></li>
+                                        <li><a href="#group">Group Members</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action rig d-none d-md-block">
@@ -141,8 +141,8 @@
         </section>
         <!-- slider-area-end -->
 
-        <!-- NFT-item-area -->
-        <section class="nft-item__area">
+        <!-- about-area -->
+        <section id="about" class="nft-item__area">
             <div class="container custom-container">
                 <div class="row justify-content-center">
                     <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-9">
@@ -162,13 +162,13 @@
                 </div>
             </div>
         </section>
-        <!-- NFT-item-area-end -->
+        <!--about-end -->
 
         <!-- area-background-start -->
-        <div class="area-background" data-background="assets/img/bg/area_bg01.jpg">
+        <div  class="area-background" data-background="assets/img/bg/area_bg01.jpg">
 
-            <!-- about-area -->
-            <section class="contact-area">
+            <!-- coNTACT-area -->
+            <section id="contact" class="contact-area">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-10">
@@ -215,7 +215,7 @@
             <!-- contact-area-end -->
     
              <!-- gallery-area -->
-             <section class="gallery__area fix section-pb-130">
+             <section id="news" class="gallery__area fix section-pb-130">
                 <div class="gallery__slider">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -293,7 +293,7 @@
         <!-- area-background-end -->
 
         <!-- team-area -->
-        <section class="team__area team-bg section-pt-130 section-pb-100" data-background="assets/img/bg/team_bg.jpg">
+        <section id="group" class="team__area team-bg section-pt-130 section-pb-100" data-background="assets/img/bg/team_bg.jpg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-7 col-md-10">
@@ -310,8 +310,8 @@
                                 <a href="team-details.html"><img src="assets/img/team/team01.png" alt="img"></a>
                             </div>
                             <div class="team__content">
-                                <h4 class="name"><a href="team-details.html">killer master</a></h4>
-                                <span class="designation">Blockchain Expert</span>
+                                <h4 class="name"><a href="team-details.html">Shayan Ali</a></h4>
+                                <span class="designation">Fullstack Developer</span>
                             </div>
                         </div>
                     </div>
@@ -321,8 +321,8 @@
                                 <a href="team-details.html"><img src="assets/img/team/team02.png" alt="img"></a>
                             </div>
                             <div class="team__content">
-                                <h4 class="name"><a href="team-details.html">tanu mark</a></h4>
-                                <span class="designation">Developer</span>
+                                <h4 class="name"><a href="team-details.html">M.Azhar Ghafoor</a></h4>
+                                <span class="designation">Fullstack Developer</span>
                             </div>
                         </div>
                     </div>
@@ -332,8 +332,8 @@
                                 <a href="team-details.html"><img src="assets/img/team/team03.png" alt="img"></a>
                             </div>
                             <div class="team__content">
-                                <h4 class="name"><a href="team-details.html">Thompson Scot</a></h4>
-                                <span class="designation">Art Director</span>
+                                <h4 class="name"><a href="team-details.html">Neha Khan </a></h4>
+                                <span class="designation">AI/ML</span>
                             </div>
                         </div>
                     </div>
@@ -343,8 +343,8 @@
                                 <a href="team-details.html"><img src="assets/img/team/team04.png" alt="img"></a>
                             </div>
                             <div class="team__content">
-                                <h4 class="name"><a href="team-details.html">Shakh Danial</a></h4>
-                                <span class="designation">Crypto Advisor</span>
+                                <h4 class="name"><a href="team-details.html">Shahroz Rana</a></h4>
+                                <span class="designation">Social media Marketing</span>
                             </div>
                         </div>
                     </div>
