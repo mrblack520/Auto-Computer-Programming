@@ -2839,12 +2839,23 @@
      opacity: 0;
      z-index: -1;
  }
-
  .slider__shapes img:nth-child(1) {
      left: 23%;
      top: 17%;
      animation-delay: 0.2s;
  }
+ .logo{
+    width: 100px !important;
+    margin-left: 50px !important;
+ }
+ .logo_fot{
+    width: 100px !important;
+    float: left;
+    
+    margin-top: -50px;
+    height: 100px;
+    position: absolute;
+}
 
  @media (max-width: 991.98px) {
      .slider__shapes img:nth-child(1) {
