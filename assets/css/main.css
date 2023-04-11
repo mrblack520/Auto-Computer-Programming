@@ -1624,6 +1624,10 @@
     transform: rotate(90deg);
  }
 
+ .waaaaa{
+    width: 100px !important;
+    height: 30px;
+ }
  .scroll__top.open {
      bottom: 30px;
  }
