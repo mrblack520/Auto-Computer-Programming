@@ -27,7 +27,12 @@
         z-index: -999;
         height: 800px !important;
     }
-   
+    @media(max-width: 914px) {
+        canvas{
+        height: 1200px !important;
+        /* display: none; */
+    }
+    }
 </style>
 
 <body>
@@ -197,7 +202,7 @@ gsap.to(animProps, {
 
     <!-- scroll-top -->
     <button class="scroll__top scroll-to-target" data-target="html">
-        <i class="flaticon-right-arrow"></i>
+        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
     </button>
     <!-- scroll-top-end-->
 

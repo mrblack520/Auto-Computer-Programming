@@ -1621,6 +1621,7 @@
      background: var(--tg-theme-primary);
      transition: 0.8s ease;
      border: none;
+    transform: rotate(90deg);
  }
 
  .scroll__top.open {
