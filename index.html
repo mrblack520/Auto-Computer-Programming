@@ -25,7 +25,9 @@
     canvas{
         position: absolute;
         z-index: -999;
+        height: 800px !important;
     }
+   
 </style>
 
 <body>
@@ -111,7 +113,7 @@ var shaderMaterial = new THREE.ShaderMaterial({
 
 var particles = new THREE.Points(geometry, shaderMaterial);
 
-particles.boundingSphere = 50;
+particles.boundingSphere = 700;
 
 var renderingParent = new THREE.Group();
 renderingParent.add(particles);
@@ -120,7 +122,7 @@ var resizeContainer = new THREE.Group();
 resizeContainer.add(renderingParent);
 scene.add(resizeContainer);
 
-camera.position.z = 250;
+camera.position.z = 150;
 
 var animate = function () {
   requestAnimationFrame(animate);
@@ -297,7 +299,7 @@ gsap.to(animProps, {
                             </div>
                             <div class="col-xxl-6 col-xl-5 col-lg-6">
                                 <div class="slider__img text-center">
-                                    <img src="./assets/video/0001-0120-unscreen.gif" class="w-100" data-magnetic alt="img">
+                                    <img src="./assets/video/0001-0120-unscreen.gif" class="wt" data-magnetic alt="img">
                                 </div>
                             </div>
                         </div>
