@@ -237,8 +237,60 @@ gsap.to(animProps, {
                                 <div class="tgmenu__action rig d-none d-md-block">
                                     <ul class="list-wrap">
                                        
-                                        <li ><a href="#" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
-                                        
+                                        <!-- modal login start  -->
+                                        <div class="modal fade bg-dark opacity-75 " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                            <div class="modal-dialog   modal-dialog-centered ">
+                                              <div class="modal-content border border1  border-4 border-success  bg-transparent">
+                                                <div class="modal-header border  border-success ">
+                                                  <h5 class="modal-title center" id="exampleModalToggleLabel">Login</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body  ">
+                                                    <form >
+                                                        <div class="input-group">
+                                                            <input value="" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name">
+                                                            <label for="text-1542372332072">Ihr Name</label>
+                                                            <div class="req-mark">!</div>
+                                                          </div>
+                                                          <div class="input-group">
+                                                            <input value="" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name">
+                                                            <label for="text-1542372332072">Ihr Name</label>
+                                                            <div class="req-mark">!</div>
+                                                          </div>
+                                                       
+                                                        <div class="form-group">
+                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer border  border-success">
+                                                  <p >don't have account  <a href="#exampleModalToggle2"  data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">create account</a> </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  Hide this modal and show the first with the button below.
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <p >Already have account? <a  data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal" href="#exampleModalToggle"> Login</a></p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+
+                                      
+
+                                        <!-- modal login end  -->
                                     </ul>
                                 </div>
                             </nav>
