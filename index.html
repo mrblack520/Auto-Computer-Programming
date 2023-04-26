@@ -23,13 +23,14 @@
 </head>
 <style>
     canvas{
+        width: 100% !important;
         position: absolute;
         z-index: -999;
         height: 800px !important;
     }
     @media(max-width: 914px) {
         canvas{
-        height: 1200px !important;
+        height: 1200px !important;  
         /* display: none; */
     }
     }
@@ -40,7 +41,7 @@
     var scene = new THREE.Scene();
 document.addEventListener("mousemove", onMouseMove, false);
 var camera = new THREE.PerspectiveCamera(
-  75,
+  50,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -75,7 +76,7 @@ for (var i = 0; i < 1600; i++) {
 
   vertices.push(vertex.x, vertex.y, vertex.z);
 
-  var color = new THREE.Color(Math.random() * 0xffffff);
+  var color = new THREE.Color( 0x72bcd4);
   colors.push(color.r, color.g, color.b);
 }
 
@@ -91,7 +92,7 @@ geometry.setAttribute(
 // Custom shader material
 var shaderMaterial = new THREE.ShaderMaterial({
   uniforms: {
-    color: { value: new THREE.Color(0xffffff) },
+    color: { value: new THREE.Color(0x72bcd4) },
     size: { value: 2.0 }
   },
   vertexShader: `
