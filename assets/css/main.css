@@ -1623,7 +1623,9 @@
      border: none;
     transform: rotate(90deg);
  }
-
+.modal-backdrop{
+    z-index: -1;
+}
  .waaaaa{
     width: 100px !important;
     height: 30px;
@@ -2253,7 +2255,7 @@
  }
 
  .tgmobile__search input {
-     display: block;
+     /* display: block; */
      width: 100%;
      border: none;
      padding: 10px 45px 10px 20px;
@@ -11381,3 +11383,147 @@
  }
 
  /*# sourceMappingURL=main.css.map */
+
+
+
+
+
+ /* form css  */
+ /* Made with love by Mutiullah Samim*/
+
+
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+
+
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: #45f882;
+}
+
+.links a{
+margin-left: 4px;
+}
+.border1{
+    border-radius: 18px !important;
+}
+.btn-close{
+    background-color: #45f882;
+}
+
+
+
+
+
+.col-3{
+    float: left;
+    width: 37.33%;
+    margin: 40px 3%;
+    position: relative; /* necessary to give position: relative to parent. */
+  }
+  input[type="text"]{
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #45f882;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+  }
+   
+  .effect-1{
+    border: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #45f882;;
+    background-color: transparent;
+  }
+   
+  .effect-1 ~ .focus-border{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #45f882;;
+    transition: 0.4s;
+  }
+   
+  .effect-1:focus ~ .focus-border,
+  .has-content.effect-1 ~ .focus-border{
+    width: 100%;
+    transition: 0.4s;
+  }
+/*    
+  .effect-1 ~ label{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 9px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+  } */
+   
+  .effect-1:focus ~ label,
+  .has-content.effect-1 ~ label{
+    top: -16px;
+    font-size: 12px;
+    color: #45f882;
+    transition: 0.3s;
+  }
+  
+
+
+
+
+
+
+  

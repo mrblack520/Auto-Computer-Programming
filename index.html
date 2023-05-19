@@ -23,13 +23,14 @@
 </head>
 <style>
     canvas{
+        width: 100% !important;
         position: absolute;
         z-index: -999;
         height: 800px !important;
     }
     @media(max-width: 914px) {
         canvas{
-        height: 1200px !important;
+        height: 1200px !important;  
         /* display: none; */
     }
     }
@@ -40,7 +41,7 @@
     var scene = new THREE.Scene();
 document.addEventListener("mousemove", onMouseMove, false);
 var camera = new THREE.PerspectiveCamera(
-  75,
+  50,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -75,7 +76,7 @@ for (var i = 0; i < 1600; i++) {
 
   vertices.push(vertex.x, vertex.y, vertex.z);
 
-  var color = new THREE.Color(Math.random() * 0xffffff);
+  var color = new THREE.Color( 0x72bcd4);
   colors.push(color.r, color.g, color.b);
 }
 
@@ -91,7 +92,7 @@ geometry.setAttribute(
 // Custom shader material
 var shaderMaterial = new THREE.ShaderMaterial({
   uniforms: {
-    color: { value: new THREE.Color(0xffffff) },
+    color: { value: new THREE.Color(0x72bcd4) },
     size: { value: 2.0 }
   },
   vertexShader: `
@@ -237,8 +238,95 @@ gsap.to(animProps, {
                                 <div class="tgmenu__action rig d-none d-md-block">
                                     <ul class="list-wrap">
                                        
-                                        <li ><a href="#" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
-                                        
+                                        <!-- modal login start  -->
+                                        <div class="modal fade bg-dark opacity-75 " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                            <div class="modal-dialog   modal-dialog-centered ">
+                                              <div class="modal-content border border1  border-4 border-success  bg-transparent">
+                                                <div class="modal-header border  border-success ">
+                                                  <h5 class="modal-title " id="exampleModalToggleLabel">Login</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body  ">
+                                                    <form >
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <label>Email</label>
+                                                         </div>
+                                                        
+                                                         
+
+
+                                                        <div class="form-group">
+                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+
+                                                        </div>
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <label>Password</label>
+                                                         </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer border  border-success">
+                                                  <p >don't have account  <a href="#exampleModalToggle2"  data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">create account</a> </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="modal fade    bg-dark opacity-75" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                              <div class="modal-content border border1  border-4 border-success  bg-transparent">
+                                                <div class="modal-header   border  border-success">
+                                                  <h5 class="modal-title" id="exampleModalToggleLabel2">Register</h5>
+                                                  <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form >
+                                                       
+                                                        
+                                                         
+
+
+                                                       
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <label>Name</label>
+                                                         </div>
+                                                   
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="email" placeholder="" />
+                                                            <label>Email</label>
+                                                         </div>
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="password" placeholder="" />
+                                                            <label>Password</label>
+                                                         </div>
+                                                         <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="password" placeholder="" />
+                                                            <label>Conform Password</label>
+                                                         </div>
+                                                    </form>
+                                                    <div class="col-3 input-effect">
+                                                    <form class="center" action="">
+                                                        <div class="form-group ">
+                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> Registerer</a></li>
+    
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                </div>
+                                                
+                                                <div class="modal-footer">
+                                                   
+                                                  <p >Already have account? <a  data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal" href="#exampleModalToggle"> Login</a></p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+
+                                      
+
+                                        <!-- modal login end  -->
                                     </ul>
                                 </div>
                             </nav>
@@ -250,9 +338,90 @@ gsap.to(animProps, {
                                 <div class="nav-logo">
                                     <a href="index.html"><img src="assets/img/logo/logo.png" class="w" alt="Logo"></a>
                                 </div>
-                                <div class="tgmobile__search">
+                                
                                   
-                                </div>
+                                        <!-- modal login start  -->
+                                        <div class="modal fade bg-dark opacity-75 " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                            <div class="modal-dialog   modal-dialog-centered ">
+                                              <div class="modal-content border border1  border-4 border-success  bg-transparent">
+                                                <div class="modal-header border  border-success ">
+                                                  <h5 class="modal-title " id="exampleModalToggleLabel">Login</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body  ">
+                                                    <form >
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <label>Email</label>
+                                                         </div>
+                                                        
+                                                         
+
+
+                                                        <div class="form-group">
+                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+
+                                                        </div>
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <label>Password</label>
+                                                         </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer border  border-success">
+                                                  <p >don't have account  <a href="#exampleModalToggle2"  data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">create account</a> </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="modal fade    bg-dark opacity-75" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                              <div class="modal-content border border1  border-4 border-success  bg-transparent">
+                                                <div class="modal-header   border  border-success">
+                                                  <h5 class="modal-title" id="exampleModalToggleLabel2">Register</h5>
+                                                  <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form >
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <label>Name</label>
+                                                         </div>
+                                                   
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="email" placeholder="" />
+                                                            <label>Email</label>
+                                                         </div>
+                                                        <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="password" placeholder="" />
+                                                            <label>Password</label>
+                                                         </div>
+                                                         <div class="col-3 input-effect">
+                                                            <input class="effect-1" type="password" placeholder="" />
+                                                            <label>Conform Password</label>
+                                                         </div>
+                                                    </form>
+                                                    <div class="col-3 input-effect">
+                                                    <form class="center" action="">
+                                                        <div class="form-group ">
+                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> Registerer</a></li>
+    
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                </div>
+                                                
+                                                <div class="modal-footer">
+                                                   
+                                                  <p >Already have account? <a  data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal" href="#exampleModalToggle"> Login</a></p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+
+                                      
+                               
                                 <div class="tgmobile__menu-outer">
                                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                                 </div>
@@ -320,19 +489,16 @@ gsap.to(animProps, {
         <!-- about-area -->
         <section id="about" class="nft-item__area">
             <div class="container custom-container">
-                <div class="row justify-content-center">
-                    <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-9">
-                       <h1 class="h1 align-items-center">ABOUT US</h1>
+                <div class="row ">
+                    <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8">
+                       <h1 class="h1">ABOUT US</h1>
 
-                       <div class="w-100 ">
-                        <p class="tg__animate-text style2">At SNAS, we believe that programming should be accessible to all, regardless of their background or experience. That's why we've created an intuitive platform that enables you to write code using natural language, so that you don't have to spend hours learning complicated syntax. We're proud to have helped thousands of businesses and individuals automate their programming tasks, saving them time and money. Whether you're a beginner or an experienced programmer, SANAS has everything you need to take your coding to the next level.</p>
+                      
+                        <p class="tg__animate-text style col-12">At SNAS, we believe that programming should be accessible to all, regardless of their background or experience. That's why we've created an intuitive platform that enables you to write code using natural language, so that you don't have to spend hours learning complicated syntax. We're proud to have helped thousands of businesses and individuals automate their programming tasks, saving them time and money. Whether you're a beginner or an experienced programmer, SANAS has everything you need to take your coding to the next level.</p>
+                     
+
                     </div>
                     
-
-                    </div>
-                    
-                    <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-9">
-                              </div>
                         </div>
                     </div>
                 </div>
