@@ -3000,10 +3000,10 @@ tfoot td:last-child):not(:where([class~=not-prose] *)) {
     background-color: rgba(142, 142, 160, var(--tw-bg-opacity))
 }
 
-.\ !bg-white {
+/* .\!bg-white {
     --tw-bg-opacity: 1 !important;
     background-color: rgba(255, 255, 255, var(--tw-bg-opacity)) !important
-}
+} */
 
 .bg-green-600 {
     --tw-bg-opacity: 1;
