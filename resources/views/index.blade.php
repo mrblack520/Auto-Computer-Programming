@@ -217,7 +217,7 @@ gsap.to(animProps, {
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav nav-t ">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" class="logo" alt="Logo"></a>
+                                    <a href="/"><img src="assets/img/logo/logo.png" class="logo" alt="Logo"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap center tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
@@ -237,7 +237,12 @@ gsap.to(animProps, {
                                 </div>
                                 <div class="tgmenu__action rig d-none d-md-block">
                                     <ul class="list-wrap">
+                                        @if (Route::has('login'))
                                        
+                                            @auth
+                                                <a href="{{ url('/dashboard') }}" class="tg-border-btn center" >Dashboard</a>
+                   @else                        
+                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sign in</a></li>
                                         <!-- modal login start  -->
                                         <div class="modal fade bg-dark opacity-75 " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                                             <div class="modal-dialog   modal-dialog-centered ">
@@ -247,9 +252,10 @@ gsap.to(animProps, {
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body  ">
-                                                    <form >
+                                                    <form method="POST" action="{{ route('login') }}" >
+                                                        @csrf
                                                         <div class="col-3 input-effect">
-                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <input class="effect-1" type="email" name="email" placeholder="" />
                                                             <label>Email</label>
                                                          </div>
                                                         
@@ -257,16 +263,26 @@ gsap.to(animProps, {
 
 
                                                         <div class="form-group">
-                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+                                                            {{-- <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> signin</a></li> --}}
+                                                            <x-button class="tg-border-btn center" ><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+                                                                {{ __('Log in') }}
+                                                            </x-button>
 
                                                         </div>
                                                         <div class="col-3 input-effect">
-                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <input class="effect-1" type="password" name="password" placeholder="" />
                                                             <label>Password</label>
+
                                                          </div>
+                                                        
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer border  border-success">
+                                                    @if (Route::has('password.request'))
+                                                    <a  href="{{ route('password.request') }}">
+                                                        {{ __('Forgot your password?') }}
+                                                    </a>
+                                                @endif
                                                   <p >don't have account  <a href="#exampleModalToggle2"  data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">create account</a> </p>
                                                 </div>
                                               </div>
@@ -280,39 +296,54 @@ gsap.to(animProps, {
                                                   <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form >
+                                                    <form method="POST" action="{{ route('register') }}">
                                                        
                                                         
-                                                         
+                                                         @csrf
 
 
                                                        
                                                         <div class="col-3 input-effect">
-                                                            <input class="effect-1" type="text" placeholder="" />
+                                                            <input class="effect-1" type="text" name="name" placeholder="" />
                                                             <label>Name</label>
                                                          </div>
                                                    
                                                         <div class="col-3 input-effect">
-                                                            <input class="effect-1" type="email" placeholder="" />
+                                                            <input class="effect-1" type="email" name="email" placeholder="" />
                                                             <label>Email</label>
                                                          </div>
                                                         <div class="col-3 input-effect">
-                                                            <input class="effect-1" type="password" placeholder="" />
+                                                            <input class="effect-1" type="password" name="password" placeholder="" />
                                                             <label>Password</label>
                                                          </div>
                                                          <div class="col-3 input-effect">
-                                                            <input class="effect-1" type="password" placeholder="" />
+                                                            <input class="effect-1" type="password" name="password_confirmation" placeholder="" />
                                                             <label>Conform Password</label>
                                                          </div>
+                                                         
+            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+            <div class="mt-4">
+                <x-label for="terms">
+                    <div class="flex items-center">
+                        <x-checkbox name="terms" id="terms" required />
+
+                        <div class="ml-2">
+                            {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                    'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
+                                    'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
+                            ]) !!}
+                        </div>
+                    </div>
+                </x-label>
+            </div>
+        @endif
+
+     
+        <x-button class="tg-border-btn center" ><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+            {{ __('Log in') }}
+        </x-button>
                                                     </form>
-                                                    <div class="col-3 input-effect">
-                                                    <form class="center" action="">
-                                                        <div class="form-group ">
-                                                            <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn center"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> Registerer</a></li>
-    
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                      
                                                 </div>
                                                 
                                                 <div class="modal-footer">
@@ -322,9 +353,9 @@ gsap.to(animProps, {
                                               </div>
                                             </div>
                                           </div>
-                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
 
-                                      
+                                          @endauth
+                                          @endif
 
                                         <!-- modal login end  -->
                                     </ul>
@@ -336,7 +367,7 @@ gsap.to(animProps, {
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" class="w" alt="Logo"></a>
+                                    <a href="/"><img src="assets/img/logo/logo.png" class="w" alt="Logo"></a>
                                 </div>
                                 
                                   
@@ -418,7 +449,8 @@ gsap.to(animProps, {
                                               </div>
                                             </div>
                                           </div>
-                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sing in</a></li>
+                                          
+                                        <li ><a data-bs-toggle="modal" href="#exampleModalToggle" role="button" class="tg-border-btn"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> sign in</a></li>
 
                                       
                                
@@ -467,7 +499,16 @@ gsap.to(animProps, {
                                     <h2 class="title wow fadeInUp" data-wow-delay=".5s">SNAS</h2>
                                     <p class="wow fadeInUp" data-wow-delay=".8s">Convert your text in Code</p>
                                     <div class="slider__btn wow fadeInUp" data-wow-delay="1.2s">
-                                        <a href="./chat.html" class="tg-btn-1"><span>Get Start</span></a>
+                                        @if (Route::has('login'))
+                                        
+                                            @auth
+                                                <a href="{{ url('/dashboard') }}" class="tg-btn-1"><span>Get Start</span></a>
+                                        
+                                      
+                                     @endauth
+                                        @endif
+
+                                        {{-- <a  class="tg-btn-1"></a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -721,7 +762,7 @@ gsap.to(animProps, {
                     <div class="col-xl-4 col-lg-5 col-md-7">
                         <div class="footer-widget">
                             <div class="footer-logo logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" class="logo_fot" alt="Logo"></a>
+                                <a href="/"><img src="assets/img/logo/logo.png" class="logo_fot" alt="Logo"></a>
                             </div>
                             <div class="footer-text">
                                 <p class="desc">Our team of experienced programmers and developers has been working tirelessly to create a platform that is user-friendly, reliable, and efficient. We understand the importance of staying ahead in today's fast-paced digital world, and we're committed to providing our users with the latest tools and technologies to help them succeed.</p>
